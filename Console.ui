@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConsoleClass</class>
+ <widget class="QDialog" name="ConsoleClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Console</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="OutputWindow" name="plainTextEdit">
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>OutputWindow</class>
+   <extends>QPlainTextEdit</extends>
+   <header>OutputWindow.hpp</header>
+   <slots>
+    <slot>on_blockCountChanged(int)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="Console.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>plainTextEdit</sender>
+   <signal>blockCountChanged(int)</signal>
+   <receiver>plainTextEdit</receiver>
+   <slot>on_blockCountChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>345</x>
+     <y>213</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
